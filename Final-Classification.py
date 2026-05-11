@@ -15,13 +15,14 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neural_network import MLPClassifier
 
 from xgboost import XGBClassifier
-from lightgbm import LGBMClassifier
+
 
 X, y = make_classification(
     n_samples=200,
     n_features=4,
     n_redundant=0,
-    n_classes=2,
+    n_informative=4,
+    n_classes=3,
     random_state=42
 )
 
@@ -29,7 +30,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# model = DecisionTreeClassifier()
+model = DecisionTreeClassifier()
 
 # model = SVC()
 # model = KNeighborsClassifier()
